@@ -1,3 +1,24 @@
+# ExportHtml 2.8.0
+
+Oct 21, 2017
+
+- **NEW**: Add support for per scope selection foreground.
+- **FIX**: Some general color scheme parsing and tweaking issues.
+
+# ExportHtml 2.7.0
+
+Oct 20, 2017
+
+- **NEW**: Add support for `.sublime-color-scheme` files.
+- **NEW**: Drop option to include scheme in output.
+
+# ExportHtml 2.6.0
+
+Oct 6, 2017
+
+- **NEW**: Upgrade theme_tweaker and rgba lib which adds the ability to adjust contrast.
+- **FIX**: Don't include document build folder.
+
 # ExportHtml 2.5.0
 
 Released Aug 12, 2017
