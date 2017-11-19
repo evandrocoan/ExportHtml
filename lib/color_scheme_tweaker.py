@@ -66,9 +66,12 @@ def get_tmtheme(scheme):
         foreground = rule.get('foreground')
         background = rule.get('background')
         fontstyle = rule.get(FONT_STYLE)
+        selection_foreground = rule.get('selection_foreground')
 
-        if foreground:
+        if foreground and isinstance(foreground, str):
             entry['settings']['foreground'] = foreground
+        if selection_foreground:
+            entry['selectionForeground'] = selection_foreground
         if background:
             entry['settings']['background'] = background
         if fontstyle:
@@ -182,10 +185,21 @@ class ColorSchemeTweaker(object):
             ).get_rgba()
 
             for rule in scheme['rules']:
-                foreground, background = self._filter_colors(
-                    self.process_color(rule.get("foreground", None)),
-                    self.process_color(rule.get("background", None))
-                )
+                fg = rule.get("foreground", None)
+                bg = self.process_color(rule.get("background", None))
+                if isinstance(fg, list):
+                    foreground = []
+                    f, background = self._filter_colors((self.process_color(fg[0]) if fg else None), bg)
+                    if f:
+                        foreground.append(f)
+                    for gradient in fg[1:]:
+                        f = self._filter_colors(self.process_color(gradient), bg)[0]
+                        if f:
+                            foreground.append(f)
+                    if not foreground:
+                        foreground = None
+                else:
+                    foreground, background = self._filter_colors(self.process_color(fg), bg)
                 if foreground is not None:
                     rule["foreground"] = foreground
                 if background is not None:

@@ -1,3 +1,29 @@
+# ExportHtml 2.11.0
+
+Nov 19, 2017
+
+- **NEW**: Add support for `.hidden-color-scheme`.
+- **FIX**: Update dependencies.
+
+# ExportHtml 2.10.2
+
+Nov 8, 2017
+
+- **FIX**: Create fallback file read for resource race condition.
+
+# ExportHtml 2.10.1
+
+Nov 7, 2017
+
+- **FIX**: Parse legacy `foregroundSelection` properly.
+
+# ExportHtml 2.10.0
+
+Nov 4, 2017
+
+- **NEW**: Add support `.sublime-color-scheme` hashed syntax highlighting.
+- **FIX**: `.sublime-color-scheme` merge logic.
+
 # ExportHtml 2.9.1
 
 Oct 30, 2017
