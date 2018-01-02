@@ -1,6 +1,22 @@
+# ExportHtml 2.12.1
+
+Jan 1, 2018
+
+- **FIX**: Allow `-` in variables names. Write color translations to main scheme object and ensure filtering is done after color translations.
+
+# ExportHtml 2.12.0
+
+Dec 2, 2017
+
+- **NEW**: Better tab conversion algorithm. Converts tabs to spaces based on tab stops (though it doesn't account for character width).
+- **NEW**: Using `disable_nbsp` will insert real tabs or spaces.
+- **NEW**: Settings are gathered from the view under conversion, not the global preferences.
+- **NEW**: Default provided print setups now disables `nbsp` by default to use the exact whitespace in a file.
+- **FIX**: Font in HTML not being displayed correctly.
+
 # ExportHtml 2.11.0
 
-Nov 19, 2017
+Nov 20, 2017
 
 - **NEW**: Add support for `.hidden-color-scheme`.
 - **FIX**: Update dependencies.
